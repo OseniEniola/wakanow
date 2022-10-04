@@ -1,0 +1,297 @@
+.first-column {
+  width: 100%;
+  padding-right: 0!important;
+
+  ::-webkit-scrollbar {
+    height: 10px;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .pinned-container {
+
+    .pin-banner-wrapper{
+      height: 14.5rem;
+      position: relative;
+      background-color: #EDF2FE;
+      color: #303368;
+      font-weight: bold;
+
+      .banner-close-icon {
+        font-size: 1.5rem;
+        color: #8687AA;
+        position: absolute;
+        top: 5%;
+        right: 2%;
+        cursor: pointer;
+      }
+
+      img {
+        height: 7.5rem;
+        width: 9rem;
+      }
+
+      .banner-text-one {
+        font-size: 1.20rem;
+      }
+
+      .banner-text-two {
+        font-size: 0.78rem;
+      }
+    }
+
+    .pinned-table-wrapper {
+      background: #EDF2FE;
+      max-height: 14.5rem;
+      overflow-x: auto;
+      padding: 0.625rem;
+
+      .pinned-table-row {
+        border-bottom: 1px groove #54585A33;
+      }
+
+      .pinned-beneath-text {
+        color: #54585ACC;
+        font-size: 0.688rem;
+      }
+
+      .pin {
+        color: dimgrey;
+        cursor: pointer;
+      }
+
+      /*table layout*/
+      table {
+        table-layout: fixed;
+        min-width: 55rem;
+
+        td {
+          padding: 0.5rem 0;
+          word-wrap: break-word;
+          vertical-align: middle;
+
+          &:nth-child(1) {
+            width: 5%;
+          }
+
+          &:nth-child(2) {
+            width: 60%;
+          }
+
+          &:nth-child(3) {
+            width: 16%;
+          }
+
+          &:nth-child(4) {
+            width: 14%;
+          }
+
+          &:nth-child(5) {
+            width: 5%;
+          }
+        }
+      }
+    }
+  }
+
+  .list-container{
+
+    .list-table-wrapper {
+      overflow-x: auto;
+
+      .list-selected-cases-text {
+        font-size: 0.938rem;
+        color: #0052CC;
+      }
+
+      button {
+        width: 6rem;
+
+        &.list-pin-button {
+          background: #0052CC;
+        }
+      }
+
+      .list-support-column {
+        color: #303368;
+        font-weight: bold;
+      }
+
+      .person-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+
+        &.assignee-icon {
+          background-color: #303368
+        }
+
+        &.partnericon {
+          background-color: #FFB830;
+        }
+      }
+
+      .actions-link {
+        i {
+          font-size: 1.688rem;
+          cursor: pointer;
+        }
+
+        li {
+          i {
+            font-size: 0.938rem;
+          }
+        }
+      }
+
+      /*table layout*/
+      table {
+        table-layout: fixed;
+        min-width: 55rem;
+
+        th, td {
+          padding: 0.7rem 0;
+          word-wrap: break-word;
+        }
+
+        th:nth-child(1) {
+          width: 1.5%;
+        }
+
+        th:nth-child(2) {
+          width: 7.5%;
+        }
+
+        th:nth-child(3) {
+          width: 14%;
+        }
+
+        th:nth-child(4) {
+          width: 31%;
+        }
+
+        th:nth-child(5) {
+          width: 10%;
+        }
+
+        th:nth-child(6) {
+          width: 11%;
+        }
+
+        th:nth-child(7) {
+          width: 10%;
+        }
+
+        th:nth-child(8) {
+          width: 10.5%;
+        }
+
+        th:nth-child(9) {
+          width: 4.5%;
+        }
+      }
+    }
+  }
+}
+
+.second-col {
+  width: 20%;
+
+  .filters-wrapper {
+    //height: 24rem;
+
+    .filters-text {
+      font-size: 17px;
+      color: #303368;
+    }
+
+    .filters {
+      width: 15rem;
+      height: 2.4rem;
+      margin-bottom: 1rem;
+      border: 1px solid #8687AA;
+      border-radius: 5px;
+      color: #303368;
+
+      option {
+        color: inherit;
+        font-weight: inherit;
+      }
+    }
+
+    .filters::placeholder {
+      color: #8687AA;
+    }
+  }
+}
+
+/*common classes*/
+.icons-wrapper {
+  color: #303368;
+
+  b {
+    font-size: 1.25rem;
+  }
+
+  i {
+    cursor: pointer;
+
+    &:nth-child(1){
+      font-size: 1rem;
+
+      &.flipped-caret {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:nth-child(3){
+      font-size: 0.688rem;
+      padding-top: 4%
+    }
+  }
+}
+
+.hidden-content {
+  padding: 0 !important;
+  height: 0 !important;
+  overflow: hidden;
+}
+
+.ant-calendar-picker::ng-deep {
+  :hover .ant-calendar-picker-input {
+    border-color: #8687AA;
+  }
+
+  .ant-calendar-picker-input {
+    width: 15rem;
+    height: 2.4rem;
+    border: 1px solid #8687AA;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+
+    .ant-calendar-range-picker-separator {
+      vertical-align: initial;
+    }
+
+    *, ::placeholder {
+      color: #8687AA;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .first-column {
+    width: 100%;
+  }
+}

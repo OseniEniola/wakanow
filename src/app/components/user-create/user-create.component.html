@@ -1,0 +1,46 @@
+<div>
+  <div class="site-page-header-ghost-wrapper">
+    <div>
+      <form nz-form [formGroup]="userForm" class="wrapper">
+        <div class="d-flex title-wrapper">
+          <div class="w-75 pl-5">
+            Create New User
+          </div>
+          <div class="w-25 pl-1 d-flex align-items-center">
+            <button nz-button nzType="primary" (click)="back()" class="cancel-btn"> <i nz-icon nzType="delete" nzTheme="outline"></i> <span>Cancel</span> </button>
+          </div>
+        </div>
+          <div class="w-75 pt-3 px-5">
+             <div class="d-flex justify-content-between pr-5">
+               <div class="w-75 pl-5">
+                 <is-form-group label="Enter Firstname" required="true" labelCls="case_label_cls">
+                   <input type="text" class="form-control title-input" formControlName="firstName" placeholder="First Name" isAutofocus/>
+                   <is-form-error label="Firstname is required " [control]="userForm.get('firstName')"></is-form-error>
+                 </is-form-group>
+               </div>
+               <div class="w-75 pl-5">
+                 <is-form-group  label="Enter Lastname" required="true"labelCls="case_label_cls">
+                   <input type="text" class="form-control title-input" formControlName="lastName" placeholder="Last Name"/>
+                   <is-form-error label="Lastname is required" [control]="userForm.get('lastName')"></is-form-error>
+                 </is-form-group>
+               </div>
+            </div>
+          </div>
+          <div class="w-75 pt-3 px-5">
+            <div class="w-75 pl-5">
+              <is-form-group label="Enter Email" required="true" labelCls="case_label_cls">
+                <input type="text" class="form-control title-input" formControlName="email" placeholder="user@email.com"/>
+                <is-form-error label="Email is required" [control]="userForm.get('email')"></is-form-error>
+              </is-form-group>
+            </div>
+          </div>
+
+
+        <footer class="w-100 d-flex justify-content-end align-items-center create-btn-container">
+          <button nz-button nzType="primary" [nzLoading]="btnloading" [disabled]= "!userForm.valid" (click)="confirmCreate()"
+                  class="font-weight-bold border-0 create-btn">Create User</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,160 @@
+header {
+  background-color: #303368;
+  color: white;
+
+  .wrapper {
+    height: 3.75rem;
+
+    .left {
+      .logo {
+        height: 1.8rem;
+        width: 6.7rem;
+        cursor: pointer;
+      }
+
+      .menu-item {
+        height: 3.75rem;
+        border-bottom: 3px solid #303368;
+        cursor: pointer;
+
+        .white-box {
+          width: 20px;
+          height: 20px;
+          background: #ffffff;
+          border-radius: 3px;
+        }
+
+        &.selected-menu-item {
+          color: #5FC7F9;
+          border-bottom-color: #5FC7F9;
+
+          .white-box {
+            background-color: #5FC7F9;
+          }
+        }
+      }
+    }
+
+    .right {
+      .new-case-btn {
+        background-color: #5FC7F9;
+        color: #303368;
+        padding: 5px 12px;
+
+        &:hover {
+          background-color: #83d1f7;
+        }
+
+        &:active {
+          background-color: #3eb0e6;
+        }
+      }
+
+      .bell {
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .profile {
+        margin: 0 4rem;
+        cursor: pointer;
+        .user {
+          .name {
+            font-weight: bold;
+            display: block;
+            font-size: 13px;
+          }
+
+          .corporate {
+            font-size: 10.5px;
+            font-weight: normal;
+            color: #8687AA;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-header{
+  color: #303368;
+  font-weight: 600;
+}
+
+.menu-text{
+  color: #303368;
+  font-size: 12px;
+
+  &.no-notifs-text {
+    color: #222;
+  }
+}
+
+.menu-footer{
+  color: #0a6ebd;
+  font-weight: normal;
+}
+
+.nameBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  width: 1.7rem;
+  margin: 0.5em;
+  border-radius: 3px;
+  color: white;
+  background-color: #0a6ebd;
+}
+
+.notif-wrapper {
+  max-height: 17rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  .notif-item-text {
+    max-width: 30rem;
+    overflow-x: scroll;
+  }
+
+  .notif-item-text::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.notif-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notif-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.notif-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.fadeOutRight {
+  animation-name:fadeOutRight;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadeOutRight{
+  from {
+    opacity:1
+  }
+  to {
+    opacity:0;
+    transform:translate3d(100%,0,0)
+  }
+}
+
+::ng-deep.ant-spin-nested-loading > div > .ant-spin {
+  position: fixed;
+  max-height: none;
+}
+
+::ng-deep.nz-notification-container{
+  z-index: 99!important;
+}

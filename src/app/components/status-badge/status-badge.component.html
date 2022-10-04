@@ -1,0 +1,15 @@
+<div class="case-status"
+  [ngClass]="{
+    'status-update':status == 'UPDATE',
+    'status-delete':status == 'DELETE',
+    'pointer': hasDropdown && status != 'UPDATE'
+  }"
+  [ngStyle]="{
+    'height.rem': height ? height : 1.5,
+    'width.rem': width ? width :  6,
+    'font-size.px': fontSize ? fontSize : 10.5
+  }"
+>
+  <span>{{statusText}}</span>
+  <i class="ml-1" nz-icon nzType="caret-down" nzTheme="outline" *ngIf="hasDropdown && status != 'CLOSED'"></i>
+</div>

@@ -1,0 +1,36 @@
+<header class="fixed-top">
+  <div class="container-fluid">
+    <div class="wrapper d-flex justify-content-between align-items-center">
+      <div class="left d-flex align-items-center">
+        <img src="/assets/images/wakanowa.png" class="ml-md-3 mr-3 mr-md-5 logo" routerLink="/">
+
+      </div>
+
+      <!--    RIGHT-->
+      <div class="right d-none d-md-flex align-items-center">
+        <div>
+          <button class="font-weight-bold border-0 new-case-btn" nz-button nzType="primary" routerLink="/user-create">New Case</button>
+        </div>
+
+        <div class="d-flex align-items-center profile" nz-dropdown nzTrigger="click" [nzDropdownMenu]="profileMenu">
+          <nz-avatar class="mr-2" [nzText]="'JD'"
+                     style="background-color:#0a6ebd; border: 2px solid #FFFFFF; display: flex; align-items: center;"></nz-avatar>
+          <div class="mr-2 user">
+            <div class="name text-truncate">Jon Doe</div>
+            <em class="corporate">Wakanow</em>
+          </div>
+          <i nz-icon nzType="down" nzTheme="outline"></i>
+        </div>
+        <nz-dropdown-menu #profileMenu="nzDropdownMenu">
+          <ul nz-menu nzSelectable>
+            <li nz-menu-item routerLink="/app/profile">Profile</li>
+            <li nz-menu-item >Log Out</li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="pt-5">
+  <router-outlet></router-outlet>
+</div>

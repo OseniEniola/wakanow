@@ -1,0 +1,61 @@
+  <div *ngIf="!isLoading" class="container-fluid px-0">
+    <div  class="p-4" >
+      <div class="site-page-header-ghost-wrapper">
+        <div class="d-flex justify-content-between">
+          <div class="pr-md-3 first-column">
+            <div class="pinned-container" [ngClass]="{'mb-4': !hidePinned}" *ngIf="pinBannerFlag">
+              <ng-container *ngIf="pinBannerFlag; then pinBanner;">
+              </ng-container>
+              <ng-template #pinBanner>
+                <div class="d-flex flex-column justify-content-around align-items-center pt-3 pb-4 pin-banner-wrapper">
+                  <img src="../../../../assets/images/pinurcases_img.png">
+                  <span class="banner-text-one">Pin Your Cases!</span>
+                  <span class="banner-text-two">Place top priority cases at the top, where you can easily track updates on them</span>
+                </div>
+              </ng-template>
+
+            </div>
+
+            <div class="list-container">
+              <div class="d-flex justify-content-between pb-2">
+
+              </div>
+              <div [ngClass]="{'hidden-content' : hideList}" class="list-table-wrapper">
+                <table class="table table-borderless">
+                  <thead class="border-top border-bottom border-dark">
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody >
+                  <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td><img style="width:20px; height: 20px; border-radius: 50%" [src]="user.avatar"></td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>
+                      <div class="d-flex justify-content-center">
+                        <is-status-badge style="margin-right: 20px; cursor: pointer" [status]="'UPDATE'" (click)="updateUser(user.id)"></is-status-badge>
+                        <is-status-badge style="cursor: pointer" [status]="'DELETE'" (click)="delete(user.id)"></is-status-badge>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <nz-pagination nzShowSizeChanger [nzTotal]="total" [(nzPageIndex)]="page" [(nzPageSize)]="pageSize" (nzPageIndexChange)="pagination()" (nzPageSizeChange)="pagination(true)" class="float-right"></nz-pagination>
+            </div>
+          </div>
+        </div>
+        <div class="row bg-dark"></div>
+      </div>
+    </div>
+
+  </div>
+

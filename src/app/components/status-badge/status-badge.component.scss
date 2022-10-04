@@ -1,0 +1,19 @@
+.case-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+
+  &.status-delete {
+    color: #F47A0E;
+    background-color: #F47A0E52;
+  }
+
+  &.status-update {
+    color: #0052CC;
+    background-color: #0052CC45;
+  }
+
+}
