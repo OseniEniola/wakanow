@@ -3,7 +3,7 @@
     <div>
       <form nz-form [formGroup]="userForm" class="wrapper">
         <div class="d-flex title-wrapper">
-          <div class="w-75 pl-5">
+          <div style="font-size: 30px;padding-top: 10px;font-weight: bold" class="w-75 pl-5">
             Create New User
           </div>
           <div class="w-25 pl-1 d-flex align-items-center">
@@ -36,7 +36,7 @@
           </div>
 
 
-        <footer class="w-100 d-flex justify-content-end align-items-center create-btn-container">
+        <footer style="position: fixed; bottom: 0" class="w-100 d-flex justify-content-end align-items-center create-btn-container">
           <button nz-button nzType="primary" [nzLoading]="btnloading" [disabled]= "!userForm.valid" (click)="confirmCreate()"
                   class="font-weight-bold border-0 create-btn">Create User</button>
         </footer>
